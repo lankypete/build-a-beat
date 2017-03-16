@@ -1,0 +1,13 @@
+/* line 5, ../sass/styles.scss */
+.light-side-padding {
+  padding: 0 10px;
+}
+
+/* line 9, ../sass/styles.scss */
+.drums {
+  background-color: aliceblue;
+}
+/* line 11, ../sass/styles.scss */
+.drums h3 {
+  text-align: center;
+}
