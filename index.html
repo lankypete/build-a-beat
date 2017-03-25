@@ -4,6 +4,8 @@
 <head>
 	<meta charset="utf-8">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
 	<title>Build a Beat</title>
 	<meta name="description" content="Build a beat">
 	<!--BootStrap 4-->
@@ -18,93 +20,90 @@
 
 <body>
 	<!--All Content-->
-	<div class="container-fluid drums">
+	<div class="container-fluid">
 
-	    	<div class="row justify-content-center">
-	    		<h2 class="drum-header">Drums</h2>
-    		</div>
+		<div class="drums row">
 
-			<div class="row justify-content-between light-side-padding">
-
-				<div class="col-xs-12">
-				<h3>Kick</h3>
-				<div class="btn-group col-xs-12 kick-buttons " data-toggle="buttons">
-						
-						<label class="btn btn-secondary">
-							<input type="radio" name="kick-radios" id='kick1' autocomplete="off">
-							Kick 1
-						</label> 
-						<label class="btn btn-secondary">
-							<input type='radio' name='kick-radios' id='kick2' autocomplete='off'>
-							Kick 2
-						</label>
-						<label class="btn btn-secondary">
-							<input type="radio" name="kick-radios" id='kick3' autocomplete="off">
-							Kick 3
-						</label>
-					</div>
-				</div>
-
-				<div class="col-xs-12">
-					<h3>Claps</h3>
-					<div class="btn-group col-xs-12 clap-buttons" data-toggle='buttons'>
-						<label class="btn btn-secondary">
-							<input type='radio' name='clap-radios' id='clap1' autocomplete="off">
-							Clap 1
-						</label>
-						<label class="btn btn-secondary">
-							<input type="radio" name="clap-radios" id="clap2" autocomplete="off">
-							Clap 2
-						</label>
-						<label class="btn btn-secondary">
-							<input type="radio" name="clap-radios" id="clap3" autocomplete="off">
-							Clap 3
-						</label>
-					</div>
-				</div>
-
-				<div class="col-xs-12">
-					<h3>Cymbals</h3>
-					<div class="btn-group col-xs-12 cymbal-buttons" data-toggle="buttons">
-						<label class="btn btn-secondary">
-							<input type="radio" name="cymbal-radios" id="cymbal1" autocomplete="off">
-							Cymbal 1
-						</label>
-						<label class="btn btn-secondary">
-							<input type="radio" name="cymbal-radios" id="cymbal2" autocomplete="off">
-							Cymbal 2
-						</label>
-						<label class="btn btn-secondary">
-							<input type="radio" name="cymbal-radios" id="cymbal3" autocomplete="off">
-							Cymbal 3
-						</label>
-					</div>
-				</div>
-
-				<div class="col-xs-12">
-					<h3>Percussion</h3>
-					<div class="btn-group col-xs-12 perc-buttons" data-toggle="buttons">
-
-						<label class="btn btn-secondary">
-							<input type="radio" name="perc-radios" id='perc1' autocomplete="off">
-							Percussion 1
-						</label>
-						<label class="btn btn-secondary">
-							<input type="radio" name="perc-radios" id="perc2" autocomplete="off">
-							Percussion 2
-						</label>
-						<label class="btn btn-secondary">
-							<input type="radio" name="perc-radios" id="perc3" autocomplete="off">
-							Percussion 3
-						</label>
-					</div>
-				</div>
-
+		<div class="col-12">
+				<h2>Drums</h2>
 			</div>
 
-	    </div>
+			<div class="col-12 text-center instruments">
+				<h3>Kick</h3>
+				<div class="btn-group" data-toggle="buttons">
 
-    </div>
+					<label class="btn btn-secondary">
+						<input type="radio" name="kick-radios" id='kick1' autocomplete="off">
+						Kick 1
+					</label> 
+					<label class="btn btn-secondary">
+						<input type='radio' name='kick-radios' id='kick2' autocomplete='off'>
+						Kick 2
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="kick-radios" id='kick3' autocomplete="off">
+						Kick 3
+					</label>
+				</div>
+			</div>
+
+			<div class="col-12 text-center instruments">
+				<h3>Claps</h3>
+				<div class="btn-group" data-toggle='buttons'>
+					<label class="btn btn-secondary">
+						<input type='radio' name='clap-radios' id='clap1' autocomplete="off">
+						Clap 1
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="clap-radios" id="clap2" autocomplete="off">
+						Clap 2
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="clap-radios" id="clap3" autocomplete="off">
+						Clap 3
+					</label>
+				</div>
+			</div>
+
+			<div class="col-12 text-center instruments">
+				<h3>Cymbals</h3>
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-secondary">
+						<input type="radio" name="cymbal-radios" id="cymbal1" autocomplete="off">
+						Cymbal 1
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="cymbal-radios" id="cymbal2" autocomplete="off">
+						Cymbal 2
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="cymbal-radios" id="cymbal3" autocomplete="off">
+						Cymbal 3
+					</label>
+				</div>
+			</div>
+
+			<div class="col-12 text-center instruments">
+				<h3>Percussion</h3>
+				<div class="btn-group" data-toggle="buttons">
+
+					<label class="btn btn-secondary">
+						<input type="radio" name="perc-radios" id='perc1' autocomplete="off">
+						Percussion 1
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="perc-radios" id="perc2" autocomplete="off">
+						Percussion 2
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="perc-radios" id="perc3" autocomplete="off">
+						Percussion 3
+					</label>
+				</div>
+			</div>
+
+		</div><!--Drums container-->
+	</div><!--Content Container-->
 
 	<!--Scripts-->
 	<script
