@@ -26,19 +26,16 @@ Timer.prototype.start = function(newDelay) {
   if (typeof newDelay !== "undefined") {
     this.delay = newDelay;
   }
-  this.stop();
-  this.handle = setTimeout(this.func, this.delay);
+  //this.stop();
+  this.handle = setInterval(this.func, this.delay);
   return this;
-};
+}
 Timer.prototype.stop = function(newDelay) {
   if (this.handle) {
     clearTimeout(this.handle);
     this.handle = 0;
   }
   return this;
-};
-Timer.prototype.update = function(delay) {
-  this.delay = delay;
 }
 
 function kick() {
@@ -62,7 +59,6 @@ function clap() {
 }
 
 function cymbal() {
-  console.log("hello");
   if($('#cymbal1').is(':checked')) {
     cymbal1.play();
   } else if($('#cymbal2').is(':checked')) {
@@ -85,24 +81,22 @@ function percussion() {
 $("#bpmBar").change(function(){
   bpm = $(this).val();
   note = ((1/(bpm*1/60))*1000)*4;
-  eighthTimer.stop();
-  eighthTimer.update((1/8)*note);
+  for (i = timers.length - 1; i >= 0; i--) {
+    var timing = 1;
+    for (j = 0; j < i; j++) {
+      timing = timing/2;
+    }
+    timers[i].stop();
+    timers[i].start(timing);
+  }
 });
 
 var eighthTimer = new Timer(cymbal, (1/8)*note);
-eighthTimer.start();
+var quarterTimer = new Timer(kick, (1/4)*note);
+var halfTimer = new Timer(clap, (1/2)*note);
+var fullTimer = new Timer(percussion, note);
+var timers = [eighthTimer, quarterTimer, halfTimer, fullTimer];
 
-window.setInterval(function(){
-  kick();
-}, (1/4)*note);
-window.setInterval(function(){
-  kick();
-}, (1/4)*note);
-
-window.setInterval(function(){
-  clap();
-}, (1/2)*note);
-
-window.setInterval(function(){
-  percussion();
-}, note);
+for (i = 0; i < timers.length; i++) {
+  timers[i].start();
+}
