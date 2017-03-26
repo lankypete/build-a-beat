@@ -1,13 +1,35 @@
-/* line 5, ../sass/styles.scss */
-.light-side-padding {
-  padding: 0 10px;
+/* Coolors Exported Palette - coolors.co/e0fbfc-c2dfe3-9db4c0-5c6b73-253237 */
+/* HSL */
+/* RGB */
+/* line 6, ../sass/styles.scss */
+body {
+  min-height: 100vh;
 }
 
-/* line 9, ../sass/styles.scss */
-.drums {
-  background-color: aliceblue;
-}
 /* line 11, ../sass/styles.scss */
-.drums h3 {
+.container-fluid {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #253237;
+}
+
+/* line 21, ../sass/styles.scss */
+.drums {
+  margin: 0 auto;
+  padding: 20px;
+  border: solid black 1px;
+  background-color: aliceblue;
+  max-width: 700px;
+}
+/* line 27, ../sass/styles.scss */
+.drums h3, .drums h2 {
   text-align: center;
+}
+
+/* line 32, ../sass/styles.scss */
+.instruments {
+  padding: 15px 0;
 }

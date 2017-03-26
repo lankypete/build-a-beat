@@ -1,14 +1,34 @@
 @import "compass";
 @import "compass/css3";
 @import "partials/variables";
+@import "palette.scss";
 
-.light-side-padding {
-	padding: 0 10px;
+body{
+	min-height: 100vh;
+	//color: $color3;
 }
 
+.container-fluid{
+	min-height: 100vh;
+	padding: 0;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color5;
+}
+
+
 .drums {
+margin: 0 auto;
+padding: 20px;
+border: solid black 1px;
 background-color: aliceblue;
-	h3 {
+max-width: 700px;
+	h3, h2{
 	text-align: center;	
 	}
+}
+
+.instruments{
+	padding: 15px 0;
 }

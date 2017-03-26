@@ -1,3 +1,6 @@
+var bpm = 125;
+var note = ((1/(bpm*1/60))*1000)*4;
+
 var kick1 = new Audio('audio/kick1.mp3');
 var kick2 = new Audio('audio/kick2.mp3');
 var kick3 = new Audio('audio/kick3.mp3');
@@ -13,6 +16,27 @@ var cymbal3 = new Audio('audio/cymbal3.mp3');
 var percussion1 = new Audio('audio/percussion1.mp3');
 var percussion2 = new Audio('audio/percussion2.mp3');
 var percussion3 = new Audio('audio/percussion3.mp3');
+
+function Timer(func, delay) {
+  this.handle = 0;
+  this.func = func;
+  this.delay = delay;
+}
+Timer.prototype.start = function(newDelay) {
+  if (typeof newDelay !== "undefined") {
+    this.delay = newDelay;
+  }
+  //this.stop();
+  this.handle = setInterval(this.func, this.delay);
+  return this;
+}
+Timer.prototype.stop = function(newDelay) {
+  if (this.handle) {
+    clearTimeout(this.handle);
+    this.handle = 0;
+  }
+  return this;
+}
 
 function kick() {
   if($('#kick1').is(':checked')) {
@@ -54,9 +78,25 @@ function percussion() {
   }
 }
 
-window.setInterval(function(){
-  kick();
-  setTimeout(clap, 1000);
-  setTimeout(cymbal, 2000);
-  setTimeout(percussion, 3000);
-}, 4000);
+$("#bpmBar").change(function(){
+  bpm = $(this).val();
+  note = ((1/(bpm*1/60))*1000)*4;
+  for (i = timers.length - 1; i >= 0; i--) {
+    var timing = 1;
+    for (j = 0; j < i; j++) {
+      timing = timing/2;
+    }
+    timers[i].stop();
+    timers[i].start(timing);
+  }
+});
+
+var eighthTimer = new Timer(cymbal, (1/8)*note);
+var quarterTimer = new Timer(kick, (1/4)*note);
+var halfTimer = new Timer(clap, (1/2)*note);
+var fullTimer = new Timer(percussion, note);
+var timers = [eighthTimer, quarterTimer, halfTimer, fullTimer];
+
+for (i = 0; i < timers.length; i++) {
+  timers[i].start();
+}
